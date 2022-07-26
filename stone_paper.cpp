@@ -30,12 +30,12 @@ cout<<"\n\n*********************************************************************
 void display()
 {
 cout<<"********************************************************************************************\n\n"<<endl;
-cout<<"________________________________Rock, Scissor ,Paper Game_________________________________\n\n"<<endl;
+cout<<"________________________________Stone, Scissor ,Paper Game_________________________________\n\n"<<endl;
 	cout<<endl;
 	cout<<"\t Game rules : "<<endl;
-	cout<<"\t ->Rock wins over scissor"<<endl;
+	cout<<"\t ->Stone wins over scissor"<<endl;
 	cout<<"\t ->Scissor wins over paper"<<endl;
-	cout<<"\t ->Paper wins over rock"<<endl;
+	cout<<"\t ->Paper wins over stone"<<endl;
 	cout<<endl;
 }
 
@@ -44,7 +44,7 @@ int score_()
 	int input;
 	string user_input;
     statement:
-cout<<"1) Rock"<<endl;
+cout<<"1) Stone"<<endl;
 cout<<"2) Paper"<<endl;
 cout<<"3) Scissor"<<endl;
 
@@ -53,7 +53,7 @@ cin>>input;
 cout<<endl;	
 if(input==1)
 {
-	user_input="Rock";
+	user_input="Stone";
 }
 else if(input==2)
 {
@@ -72,7 +72,7 @@ int computer_input=rand()%3 + 1;
 string system_input;
 if(computer_input==1)
 {
-	system_input="Rock";
+	system_input="Stone";
 }
 else if(computer_input==2)
 {
@@ -102,47 +102,47 @@ else if(output==-1)
 }
 int winner(string user_input,string system_input)
 {
-	if(system_input=="Rock")
+	if(user_input=="Stone")
 	{
-		if(user_input=="Rock")
+		if(system_input=="Stone")
 		{
 			return -1;
 		}
-		else if(user_input=="Scissor")
-		{
-			return  0;
-		}
-		else if(user_input=="Paper")
-		{
-			return 1;
-		}
-	}
-	if(system_input=="Scissor")
-	{
-		if(system_input=="Rock")
-		{
-			return 1;
-		}
-		else if(user_input=="Scissor")
-		{
-			return  -1;
-		}
-		else if(user_input=="Paper")
-		{
-			return 0;
-		}
-	}
-	if(system_input=="Paper")
-	{
-		if(user_input=="Rock")
-		{
-			return 0;
-		}
-		else if(user_input=="Scissor")
+		else if(system_input=="Scissor")
 		{
 			return  1;
 		}
-		else if(user_input=="Paper")
+		else if(system_input=="Paper")
+		{
+			return 0;
+		}
+	}
+	if(user_input=="Scissor")
+	{
+		if(system_input=="Stone")
+		{
+			return 0;
+		}
+		else if(system_input=="Scissor")
+		{
+			return  -1;
+		}
+		else if(system_input=="Paper")
+		{
+			return 1;
+		}
+	}
+	if(user_input=="Paper")
+	{
+		if(system_input=="Stone")
+		{
+			return 1;
+		}
+		else if(system_input=="Scissor")
+		{
+			return  0;
+		}
+		else if(system_input=="Paper")
 		{
 			return -1;
 		}
